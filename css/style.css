@@ -1,0 +1,137 @@
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+@keyframes showup {
+    from{top:-40%;}
+    to {top: 40%;}
+    
+}
+@font-face {
+	font-family: "Snell Roundhand Script";
+    src: url("https://db.onlinewebfonts.com/t/31ed0189fe1ff1e740a652e0f75b77dc.eot");
+    src: url("https://db.onlinewebfonts.com/t/31ed0189fe1ff1e740a652e0f75b77dc.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/31ed0189fe1ff1e740a652e0f75b77dc.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/31ed0189fe1ff1e740a652e0f75b77dc.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/31ed0189fe1ff1e740a652e0f75b77dc.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/31ed0189fe1ff1e740a652e0f75b77dc.svg#Snell Roundhand Script")format("svg");
+
+   
+}
+@font-face{
+	 font-family: "Bookman Old Style";
+    src: url("https://db.onlinewebfonts.com/t/08a4f684fb0599188430dd0b97af52ac.eot");
+    src: url("https://db.onlinewebfonts.com/t/08a4f684fb0599188430dd0b97af52ac.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/08a4f684fb0599188430dd0b97af52ac.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/08a4f684fb0599188430dd0b97af52ac.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/08a4f684fb0599188430dd0b97af52ac.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/08a4f684fb0599188430dd0b97af52ac.svg#Bookman Old Style")format("svg")
+}   
+  body{
+  	background: rgb(248,212,255);
+    background: radial-gradient(circle, rgba(248,212,255,1) 48%, rgba(154,113,162,1) 100%);
+    margin: 0%;
+    padding: 0%;
+    border:0%;
+    width: 100%;
+}
+ .conteiner
+ {
+ 	display: flex; 
+  flex-direction: row;  
+  flex-wrap: nowrap; 
+  font-size: 20px;
+  justify-content: space-between;
+  background: rgb(182,0,102);
+  background: linear-gradient(90deg, rgba(182,0,102,1) 0%, rgb(232, 189, 235) 31%, rgba(234,196,240,1) 69%, rgba(182,0,102,1) 100%);
+  background: no-wrap;
+  animation-name: fadein;
+  animation-duration: 2s;
+
+}
+
+.logo{
+	width: 280px;
+	height: 280px;
+
+ }
+ 
+.nm{
+   font-family: "Snell Roundhand Script";
+   font-size: 50px;
+ 
+ }
+
+.nav_bar{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    animation-name: fadein;
+    animation-duration: 2s;
+ }
+
+ 
+ 
+   
+.btn{
+    
+   font-family: "Snell Roundhand Script";
+   background:none;
+   border: none;
+   cursor:pointer;
+   font-size: 40px;
+   margin: 20px;
+   animation-name: fadein;
+   animation-duration: 2s;
+
+}
+
+.btn_spc {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;     
+    margin: 20px;
+}
+
+.inst {
+    height: 150px;
+    width: 150px;
+    animation-name: fadein;
+    animation-duration: 2s;
+}
+
+.psic {
+    height: 200px;
+    width: 200px;
+    animation-name: fadein;
+    animation-duration: 3s;
+}
+
+.what {
+    height: 150px;
+    width: 150px;
+    animation-name: fadein;
+    animation-duration: 4s;
+    
+}
+
+.sbr_sty{
+    background-color: rgba(177, 170, 176, 0.26);
+    color: rgba(3, 3, 3, 0.712); /* Ajustando a cor do texto para ser visível em fundo preto */
+    box-shadow: 10px 10px 5px #888888; /* Definindo corretamente a sombra */
+    font-family: "Bookman Old Style"; /* Ajustando a fonte */
+    font-size: 20px;
+    resize: none;
+    width: 40%; /* Largura da textarea */
+    height: 400px; /* Altura da textarea */
+    padding: 40px; /* Exemplo de padding */
+    position: absolute;
+    top:40%;
+    left:30%;
+    animation-name: showup;
+    animation-duration: 2s;
+    
+  }
