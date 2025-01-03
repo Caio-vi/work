@@ -135,9 +135,47 @@
     animation-duration: 2s;
     
   }
-
 @media (max-width:400px){
-    .conteiner{
-        width: 100%;
-    }
+     .sbr_sty{
+        top:30%;
+        left:20%;
+     }
+     
+     @keyframes showup {
+        from{top:-30%;}
+        to {top: 30%;}
+
+     }
+ .nm{
+    font-family: "Snell Roundhand Script";
+   font-size: 30px;
+ }
+ .logo{
+	width: 150px;
+	height: 125px;
+
+ }
+ .inst {
+    height: 100px;
+    width: 100px;
+    animation-name: fadein;
+    animation-duration: 2s;
+}
+
+.psic {
+    height: 100px;
+    width: 100px;
+    animation-name: fadein;
+    animation-duration: 3s;
+}
+
+.what {
+    height: 100px;
+    width: 100px;
+    animation-name: fadein;
+    animation-duration: 4s;
+     
+}
+  
+ 
   }
