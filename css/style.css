@@ -129,21 +129,25 @@
     height: 400px; /* Altura da textarea */
     padding: 40px; /* Exemplo de padding */
     position: absolute;
-    top:40%;
-    left:30%;
+  
+   
     animation-name: showup;
     animation-duration: 2s;
     
   }
-@media (max-width:400px){
+  
+  @media(min-width:320px){
      .sbr_sty{
-        top:30%;
-        left:20%;
+        top:  40%;
+        left: 20%;
+        
+        
+    
      }
      
      @keyframes showup {
-        from{top:-30%;}
-        to {top: 30%;}
+        from{top:-40%;}
+        to {top: 40%;}
 
      }
  .nm{
@@ -176,6 +180,52 @@
     animation-duration: 4s;
      
 }
-  
- 
+  }
+
+  @media(min-width:1200px){
+    
+   
+
+    .nm{
+        font-family: "Snell Roundhand Script";
+       font-size: 40px;
+
+    }
+    .logo{
+        width: 150px;
+        height: 200px;
+    
+     }
+     .inst {
+        height: 100px;
+        width: 100px;
+        animation-name: fadein;
+        animation-duration: 2s;
+    }
+    
+    .psic {
+        height: 100px;
+        width: 100px;
+        animation-name: fadein;
+        animation-duration: 3s;
+    }
+    
+    .what {
+        height: 100px;
+        width: 100px;
+        animation-name: fadein;
+        animation-duration: 4s;
+         
+    }
+    .sbr_sty{
+        top:  30%;
+        left: 30%;
+    
+     }
+     
+     @keyframes showup {
+        from{top:-30%;}
+        to {top: 30%;}
+
+     }
   }
