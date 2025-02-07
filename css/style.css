@@ -28,8 +28,9 @@
     url("https://db.onlinewebfonts.com/t/08a4f684fb0599188430dd0b97af52ac.ttf")format("truetype"),
     url("https://db.onlinewebfonts.com/t/08a4f684fb0599188430dd0b97af52ac.svg#Bookman Old Style")format("svg")
 }   
+ 
   body{
-  	background: rgb(248,212,255);
+     
     background: radial-gradient(circle, rgba(248,212,255,1) 48%, rgba(154,113,162,1) 100%);
     margin: 0%;
     padding: 0%;
@@ -38,7 +39,7 @@
 }
  .conteiner
  {
- 	display: flex; 
+  display: flex; 
   flex-direction: row;  
   flex-wrap: nowrap; 
   font-size: 20px;
@@ -48,6 +49,7 @@
   background: no-wrap;
   animation-name: fadein;
   animation-duration: 2s;
+   
 
 }
 
@@ -226,6 +228,20 @@
      @keyframes showup {
         from{top:-30%;}
         to {top: 30%;}
+
+     }
+  }
+  /*
+  @media(min-width:375px){
+    .sbr_sty{
+        top:  40%;
+        left: 20%;
+    
+     }
+     
+     @keyframes showup {
+        from{top:-40%;}
+        to {top: 40%;}
 
      }
   }

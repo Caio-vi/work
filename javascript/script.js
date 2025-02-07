@@ -57,7 +57,7 @@ function ctt_prt() {
         contato.classList.add("btn_spc");
 
         const inst = document.createElement("img");
-        inst.src = "instagram.jpg";
+        inst.src = "imagens/instagram.jpg";
         inst.classList.add("inst");
         const inst_lk = document.createElement("a");
         inst_lk.href = "https://www.instagram.com/psicologamonicafreitas/";
@@ -67,7 +67,7 @@ function ctt_prt() {
         contato.appendChild(inst_lk);
 
         const what = document.createElement("img");
-        what.src = "whatsapp.png";
+        what.src = "imagens/whatsapp.png";
         what.classList.add("what");
         const what_lk = document.createElement("a");
         what_lk.href = "https://wa.me/+5521991586982";
@@ -90,9 +90,7 @@ function ctt_prt() {
         ctt = true;
     }
 }
-//function curso_red(){
-//  
-//}
+ 
 
 
 
