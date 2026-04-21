@@ -1,0 +1,21 @@
+<svg width="400" height="120" viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Ícone -->
+  <g transform="translate(40,60)">
+    <circle cx="0" cy="-20" r="12" fill="#F25C86"></circle>
+    <circle cx="20" cy="0" r="12" fill="#F25C86"></circle>
+    <circle cx="0" cy="20" r="12" fill="#F25C86"></circle>
+    <circle cx="-20" cy="0" r="12" fill="#F25C86"></circle>
+  </g>
+
+  <!-- Texto principal -->
+  <text x="100" y="65" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#2D1B69">
+        conexa
+  </text>
+
+  <!-- Subtítulo -->
+  <text x="100" y="95" font-family="Arial, sans-serif" font-size="20" fill="#6A5FA0">
+        psicologia viva
+  </text>
+
+</svg>

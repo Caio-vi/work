@@ -1,98 +1,180 @@
-var texto = false;
-var ctt = false;
-var sobre;
+document.addEventListener('DOMContentLoaded', function () {
 
-function sbr_prt() {
-    // Verifica se já existe uma textarea e a remove se ctt for verdadeiro
-    if (texto == true && ctt == true) {
-        let sobre = document.querySelector('.sbr_sty');
-        if (sobre) {
-            document.body.removeChild(sobre);
-            texto = false;
+    // ========== BOTÕES DE NAVEGAÇÃO ==========
+
+    const abordagemButton = document.getElementById('abordagem');
+    if (abordagemButton) {
+        abordagemButton.addEventListener('click', () => {
+            window.location.href = 'abordagem.html';
+        });
+    }
+
+    const inicialButton = document.getElementById('inicial');
+    if (inicialButton) {
+        inicialButton.addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
+    }
+
+    const tratamentosButton = document.getElementById('tratamentos');
+    if (tratamentosButton) {
+        tratamentosButton.addEventListener('click', () => {
+            window.location.href = 'tratamentos.html';
+        });
+    }
+
+
+    if (window.location.href.includes('abordagem.html')) {
+        const elemento = document.getElementById('minha_abordagem');
+        if (elemento) {
+            window.scrollTo({
+                top: elemento.offsetTop,
+                behavior: 'smooth'
+            });
         }
     }
 
-    if (texto == false) {
-        if (ctt == true) {
-            let contato = document.querySelector('.btn_spc');
-            if (contato) {
-                document.body.removeChild(contato);
-                ctt = false;
+
+    const Api_Url = 'http://localhost:1337/api/about?populate[Site][populate]=*';
+
+    fetch(Api_Url)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            const SiteData = data.data.Site[0];
+            console.log('Nome do Site:', SiteData.Nome_do_Site);
+            console.log('Texto:', SiteData.texto_principal);
+            console.log(SiteData.Logo);
+
+            const Nome_do_Site = SiteData.Nome_do_Site;
+            document.getElementById('Nome_do_Site').textContent = Nome_do_Site;
+
+            //////////////////////
+            let urlrelativa = SiteData.Logo.url;
+            let urlCompleta = 'http://localhost:1337' + urlrelativa;
+            document.getElementById('Logo').src = urlCompleta;
+
+
+            //////////////////////
+            urlrelativa = SiteData.imagem_de_fundo.url;
+            urlCompleta = 'http://localhost:1337' + urlrelativa;
+
+            document.getElementById('imagem_de_fundo').style.backgroundImage = `url(${urlCompleta})`;
+            //////////////////////
+
+            const botoes = SiteData.botoes;
+            const Elementosbotoes = document.querySelectorAll('#botoes button');
+            console.log('Botoes:', botoes);
+            botoes.forEach((botao, index) => {
+
+                if (Elementosbotoes[index]) {
+                    Elementosbotoes[index].textContent = botao.nome_do_botao;
+
+                }
+            });
+
+            //////////////////////
+
+            let textodeacolhimento = SiteData.texto_de_acolhimento;
+            document.getElementById('texto_de_acolhimento').textContent = textodeacolhimento;
+
+            //////////////////////             
+
+
+            const textoMenor = SiteData.texto_de_acolhimento_menor;
+            document.getElementById('textoMenor').textContent = textoMenor;
+
+            //////////////////////  
+
+            switch (window.location.pathname) {
+                case '/index.html':
+                    const elementotexto = document.getElementById('texto_principal');
+                    elementotexto.innerHTML = '';
+                    for (let i = 0; i < SiteData.texto_principal.length; i++) {
+                        const novaFrase = SiteData.texto_principal[i].children[0].text;
+
+                        const formatacao = document.createElement('li');
+                        formatacao.classList.add('texto');
+                        elementotexto.appendChild(formatacao);
+                        formatacao.textContent += ' ' + novaFrase;
+
+                        if (i === 0) {
+                            formatacao.classList.add('titulo');
+                        } else {
+                            formatacao.classList.add('texto');
+                        }
+                        urlrelativa = SiteData.foto_lateral.url;
+                        urlCompleta = 'http://localhost:1337' + urlrelativa;
+                        document.getElementById('foto_lateral').src = urlCompleta;
+
+                        console.log('', urlrelativa = SiteData.foto_lateral.url);
+
+                        console.log('', urlCompleta = 'http://localhost:1337' + urlrelativa);
+                    }
+
+                    break;
+
+                case '/abordagem.html': {
+                    const abordagemtexto = document.getElementById('minha_abordagem');
+                    abordagemtexto.innerHTML = '';
+
+                    console.log("abordagemtexto", abordagemtexto);
+
+                    for (let i = 0; i < SiteData.Abordagem.length; i++) {
+                        const novaFrase = SiteData.Abordagem[i].children[0].text;
+                        const formatacao = document.createElement('li');
+                        formatacao.classList.add('texto');
+                        abordagemtexto.appendChild(formatacao);
+                        formatacao.textContent += ' ' + novaFrase;
+                    }
+
+                }
+
+                    break;
+
+                case '/tratamentos.html': {
+
+                    const tratamentotexto = document.getElementById('descricao');
+                    tratamentotexto.innerHTML = '';
+
+                    for (let i = 0; i < SiteData.Tratamentos.length; i++) {
+                        const tratamento = SiteData.Tratamentos[i];
+
+                        // Título da doença
+                        const titulo = document.createElement('h1');
+                        titulo.textContent = tratamento.nome_da_doenca;
+                        tratamentotexto.appendChild(titulo);
+
+                        // Descrição
+                        let textoDescricao = '';
+                        if (tratamento.descricaco_de_como_vai_ser_tratada?.[0]?.children?.[0]?.text) {
+                            textoDescricao = tratamento.descricaco_de_como_vai_ser_tratada[0].children[0].text;
+                        }
+
+                        const descricaoItem = document.createElement('li');
+                        descricaoItem.classList.add('texto');
+                        descricaoItem.textContent = textoDescricao;
+                        tratamentotexto.appendChild(descricaoItem);
+                    }
+
+                }
+
+                default: ("pagina inexistente")
             }
-        }
-
-        sobre = document.createElement("TextArea");
-        sobre.value = " Olá fica tranquilo, Psicoterapia é pra todos!!  E visa  cuidar de você, como um ser humano único e não somente seu diagnóstico. Vamos construir uma caminhada juntos?   Na vida passamos por situações, traumas e momentos difíceis com os quais não precisamos lidar sozinhos." +
-                      "A psicoterapia consiste em compreender as causas de seu sofrimento e encontrar formas para superá-lo." +
-                      "Você é o caminho e é capaz de construir e reconstruir caminhos, corres e rios inteiros, eu posso te ajudar nessa construção. Quer saber um pouco mais sobre como podemos caminhar? Agende um horário ou mande uma mensagem! Venha conversar, vamos juntos construir uma caminhada de equilíbrio emocional e autoconhecimento!"+
-                      " Tenho experiencia no tratamento:"+
-                       " Depressão,  " +
-                       " Fobias,"+
-                       " Ansiedade,"+
-                       " Transtornos relacionados ao estresse, "+
-                       " Problemas de casal e de família, "+
-                       " Dificuldades nos relacionamentos interpessoais, "+
-                       " Doença crônica (psicossomática) (fibromialgia, doença autoimune...)  "+
-                       " Problemas e conflitos profissionais. " ;
-        sobre.style.textAlign = "center";               
-        sobre.disabled = true;
-        sobre.classList.add("sbr_sty");
-        document.body.appendChild(sobre);
-        texto = true;
-    }
-}
-
-function ctt_prt() {
-    // Verifica se já existe um contato e o remove se texto for verdadeiro
-    if (ctt == false) {
-        if (texto == true) {
-            let sobre = document.querySelector('.sbr_sty');
-            if (sobre) {
-                document.body.removeChild(sobre);
-                texto = false;
-            }
-        }
-
-        const contato = document.createElement("div");
-        contato.classList.add("btn_spc");
-
-        const inst = document.createElement("img");
-        inst.src = "imagens/instagram.jpg";
-        inst.classList.add("inst");
-        const inst_lk = document.createElement("a");
-        inst_lk.href = "https://www.instagram.com/psicologamonicafreitas/";
-        inst_lk.target = "_blank";
-        inst_lk.title = "Instagram";
-        inst_lk.appendChild(inst);
-        contato.appendChild(inst_lk);
-
-        const what = document.createElement("img");
-        what.src = "imagens/whatsapp.png";
-        what.classList.add("what");
-        const what_lk = document.createElement("a");
-        what_lk.href = "https://wa.me/+5521991586982";
-        what_lk.target = "_blank";
-        what_lk.title = "WhatsApp";
-        what_lk.appendChild(what);
-        contato.appendChild(what_lk);
-
-        const viva = document.createElement("img");
-        viva.src = "imagens/psicologiaviva.jpg";
-        viva.classList.add("psic");
-        const viva_lks = document.createElement("a");
-        viva_lks.href = "https://perfil.psicologiaviva.com.br/psicologamonicavieira";
-        viva_lks.target = "_blank";
-        viva_lks.title = "psicologia_viva";
-        viva_lks.appendChild(viva);
-        contato.appendChild(viva_lks);
-
-        document.body.appendChild(contato);
-        ctt = true;
-    }
-}
- 
 
 
 
 
- 
+
+        })
+
+
+
+
+        .catch(error => {
+            console.error('Erro ao buscar dados:', error);
+        });
+
+
+
+}); // ← FECHA O DOMContentLoaded
