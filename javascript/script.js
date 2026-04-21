@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
-    const Api_Url = 'https://strapi-backend-xyst.onrender.com';
+    const Api_Url = 'https://strapi-backend-xyst.onrender.com/api';
 
     fetch(Api_Url)
         .then(response => response.json())
@@ -51,13 +51,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
             //////////////////////
             let urlrelativa = SiteData.Logo.url;
-            let urlCompleta = 'http://localhost:1337' + urlrelativa;
+            let urlCompleta = 'https://strapi-backend-xyst.onrender.com' + urlrelativa;
             document.getElementById('Logo').src = urlCompleta;
 
 
             //////////////////////
             urlrelativa = SiteData.imagem_de_fundo.url;
-            urlCompleta = 'http://localhost:1337' + urlrelativa;
+            urlCompleta = 'https://strapi-backend-xyst.onrender.com' + urlrelativa;
 
             document.getElementById('imagem_de_fundo').style.backgroundImage = `url(${urlCompleta})`;
             //////////////////////
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             formatacao.classList.add('texto');
                         }
                         urlrelativa = SiteData.foto_lateral.url;
-                        urlCompleta = 'http://localhost:1337' + urlrelativa;
+                        urlCompleta = ' https://strapi-backend-xyst.onrender.com' + urlrelativa;
                         document.getElementById('foto_lateral').src = urlCompleta;
 
                         console.log('', urlrelativa = SiteData.foto_lateral.url);
