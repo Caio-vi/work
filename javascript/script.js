@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+ document.addEventListener('DOMContentLoaded', function () {
 
     // ========== BOTÕES DE NAVEGAÇÃO ==========
 
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
-    const Api_Url = 'https://strapi-backend-xyst.onrender.com/api';
+    const Api_Url = 'https://strapi-backend-xyst.onrender.com/api/site?populate=*';
 
     fetch(Api_Url)
         .then(response => response.json())
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             formatacao.classList.add('texto');
                         }
                         urlrelativa = SiteData.foto_lateral.url;
-                        urlCompleta = ' https://strapi-backend-xyst.onrender.com' + urlrelativa;
+                        urlCompleta = 'https://strapi-backend-xyst.onrender.com' + urlrelativa;
                         document.getElementById('foto_lateral').src = urlCompleta;
 
                         console.log('', urlrelativa = SiteData.foto_lateral.url);
