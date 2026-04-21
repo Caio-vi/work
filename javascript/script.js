@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
-    const Api_Url = 'http://localhost:1337/api/about?populate[Site][populate]=*';
+    const Api_Url = 'https://strapi-backend-xyst.onrender.com';
 
     fetch(Api_Url)
         .then(response => response.json())
