@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                         console.log('', urlrelativa = SiteData.foto_lateral.url);
 
-                        console.log('', urlCompleta = 'http://localhost:1337' + urlrelativa);
+                        console.log('', urlCompleta = 'https://strapi-backend-xyst.onrender.com' + urlrelativa);
                     }
 
                     break;
