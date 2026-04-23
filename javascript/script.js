@@ -35,7 +35,7 @@
     }
 
 
-    const Api_Url = 'https://strapi-backend-xyst.onrender.com/api/about?populate[Site][Populate]=*';
+    const Api_Url = 'https://strapi-backend-xyst.onrender.com/api/about?populate[Site][populate]=*';
 
     fetch(Api_Url)
         .then(response => response.json())
