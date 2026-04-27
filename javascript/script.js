@@ -35,7 +35,7 @@
     }
 
 
-    const Api_Url = 'https://strapi-backend-xyst.onrender.com/api/about?populate[Site][populate]=*';
+    const Api_Url = 'https://strapi-backend-ufky.onrender.com/api/about?populate[Site][populate]=*';
 
     fetch(Api_Url)
         .then(response => response.json())
@@ -57,7 +57,7 @@
 
             //////////////////////
             urlrelativa = SiteData.imagem_de_fundo.url;
-            urlCompleta = 'https://strapi-backend-xyst.onrender.com' + urlrelativa;
+            urlCompleta = 'https://strapi-backend-ufky.onrender.com' + urlrelativa;
 
             document.getElementById('imagem_de_fundo').style.backgroundImage = `url(${urlCompleta})`;
             //////////////////////
@@ -104,12 +104,12 @@
                             formatacao.classList.add('texto');
                         }
                         urlrelativa = SiteData.foto_lateral.url;
-                        urlCompleta = 'https://strapi-backend-xyst.onrender.com' + urlrelativa;
+                        urlCompleta = 'https://strapi-backend-ufky.onrender.com' + urlrelativa;
                         document.getElementById('foto_lateral').src = urlCompleta;
 
                         console.log('', urlrelativa = SiteData.foto_lateral.url);
 
-                        console.log('', urlCompleta = 'https://strapi-backend-xyst.onrender.com' + urlrelativa);
+                        console.log('', urlCompleta = 'https://strapi-backend-ufky.onrender.com' + urlrelativa);
                     }
 
                     break;
