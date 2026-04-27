@@ -51,7 +51,7 @@
 
             //////////////////////
             let urlrelativa = SiteData.Logo.url;
-            let urlCompleta = 'https://strapi-backend-xyst.onrender.com' + urlrelativa;
+            let urlCompleta = 'https://strapi-backend-ufky.onrender.com' + urlrelativa;
             document.getElementById('Logo').src = urlCompleta;
 
 
